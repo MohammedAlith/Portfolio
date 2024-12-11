@@ -1,0 +1,241 @@
+/*****Defaule style******/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/***nav bar style******/
+.navbar{
+  position: fixed !important;
+}
+.navbar-brand{
+  background-image: linear-gradient(rgb(245, 33, 0),rgb(3, 84, 246)) !important;
+  background-clip: text !important;
+  color: transparent !important;
+ font-weight: 1000;
+}
+.nav-link.active{
+  color:crimson !important;
+}
+.nav-link.active:hover{
+  background-color:orange;
+  padding: 10px;
+}
+
+
+.navbar-dark .navbar-toggler {
+  color:#EC407A !important;
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.navbar-toggler-icon{
+  background-color:rgb(34, 2, 2) !important;
+}
+
+/***home style******/
+
+/****Animation style for home*****/
+#home p::after {
+  animation-name: role;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+ content:"";
+}
+.home video{
+  width: 100%;
+}
+@keyframes role {
+
+  25%{
+    content:"Front-End Developer";
+    color: blueviolet;
+    }
+    50%{
+      content:"Back-End Developer";
+      color: red;
+      }
+      75%{
+        content: "Web Developer";
+        color: orange;
+      }
+      100%{
+        content: "Full stack Java Developer";
+        color: magenta;
+      }
+}
+
+#home{
+  position: relative;
+ 
+}
+#home img{
+  height: 300px;
+  width:300px;
+  border-radius: 50%;
+  background-color: #EC407A;
+  background-image: url("https://cdn.pixabay.com/video/2016/08/22/4733-179738669_large.mp4");
+  
+}
+ #home .container-fluid{
+  position: absolute;
+  top:0;
+ }
+
+#home video  {
+  width:100%;
+height: 100vh;
+object-fit:cover;
+filter: brightness(50%);
+
+}
+
+/****about style******/
+#about{
+  background-color:rgb(103, 99, 99);
+  animation-name: about;
+  animation-duration: 5s;
+  animation-delay: 2s;
+ 
+}
+#about p{
+  color:rgb(25, 3, 44);
+}
+
+
+
+
+@keyframes about{
+  0%{
+    transform: translateX(-150%);
+  
+  }
+  100%{
+     transform: translateX(0);
+  }
+}
+
+
+
+
+/****education style******/
+#education{
+  background-color:rgb(222, 216, 231);
+
+}
+#education{
+  animation-name: education;
+animation-duration: 5s;
+animation-delay: 4s;
+}
+
+
+
+@keyframes education{
+  0%{
+    transform: translateX(150%);
+  
+  }
+  100%{
+     transform: translateX(0);
+  }
+}
+
+
+
+#education h1{
+  color: blueviolet;
+}
+
+#education>div>div>div:hover{
+  transition: all 2s;
+  
+  transform:scale(1.2);
+  }
+/****skills style******/
+#skills h1, #skills h2{
+  color: orange;
+}
+input[type="range"] {
+  accent-color: #ed3da1 ;
+  pointer-events: none;
+   }
+   
+
+#skills .row{
+  animation-name: input;
+  animation-duration: 5s;
+  animation-delay: 6s;
+}
+
+@keyframes input{
+  0%{
+    transform: translateX(-150%);
+  
+  }
+  100%{
+     transform: translateX(0);
+  }
+}
+/****project style******/
+#project{
+  background-color:rgb(103, 99, 99);
+}
+#project>div>div:hover{
+  transition: all 3s;
+  transform: scale(1.3);
+  }
+  #project{
+    animation-name: project;
+    animation-duration: 5s;
+    animation-delay: 8s;
+  }
+
+  /****contact style*********/
+  #contact form textarea{
+     resize: none;
+  }
+  
+  @keyframes project{
+    0%{
+      transform: translateX(150%);
+    
+    }
+    100%{
+       transform: translateX(0);
+    }
+  }
+/****responsive to all devices******/
+@media only screen and (min-width:300px){
+  .nav-link.active{
+    display: inline-flex;
+  }
+}
+  @media only screen and (max-width:601px){
+    .nav-link.active{
+      position: relative !important;
+      left: 50%;
+    }
+  }
+@media only screen and (min-width:300px) and (max-width:700px){
+  #home video{
+    min-height: 120vh;
+  }
+  #home img{
+    height:200px;
+    width:200px;
+  }
+}
+@media only screen and (min-width:300px) and (max-width:800px){
+  #education img{
+    width:100px; 
+    height:100px;
+  }
+}
+@media only screen and (min-width:300px) and (max-width:800px){
+  #project img{
+    width:100px; 
+    height:100px;
+  }
+}

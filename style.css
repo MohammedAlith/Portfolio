@@ -1,41 +1,37 @@
-/*****Defaule style******/
-*{
+/* Default style */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-/***nav bar style******/
-.navbar{
+/* Navbar style */
+.navbar {
   position: fixed !important;
+  background-color: #222;
 }
-.navbar-brand{
-  background-image: linear-gradient(rgb(245, 33, 0),rgb(3, 84, 246)) !important;
-  background-clip: text !important;
-  color: transparent !important;
- font-weight: 1000;
+.navbar-brand {
+  color: #f8b400 !important;
+  font-weight: 1000;
 }
-.nav-link.active{
-  color:crimson !important;
+.nav-link.active {
+  color: #f8b400 !important;
 }
-.nav-link.active:hover{
-  background-color:orange;
+.nav-link.active:hover {
+  background-color: #444;
   padding: 10px;
 }
 
-
 .navbar-dark .navbar-toggler {
-  color:#EC407A !important;
-  border-color: rgba(255, 255, 255, .1);
+  color: #f8b400 !important;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-.navbar-toggler-icon{
-  background-color:rgb(34, 2, 2) !important;
+.navbar-toggler-icon {
+  background-color: #444 !important;
 }
 
-/***home style******/
-
+/* Home style */
 /****Animation style for home*****/
 #home p::after {
   animation-name: role;
@@ -62,180 +58,116 @@
       }
       100%{
         content: "Full stack Java Developer";
-        color: magenta;
+        color:white;
       }
 }
 
-#home{
+
+
+
+
+#home {
   position: relative;
- 
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-#home img{
-  height: 300px;
-  width:300px;
-  border-radius: 50%;
-  background-color: #EC407A;
-  background-image: url("https://cdn.pixabay.com/video/2016/08/22/4733-179738669_large.mp4");
-  
-}
- #home .container-fluid{
+
+#home video {
   position: absolute;
-  top:0;
- }
-
-#home video  {
-  width:100%;
-height: 100vh;
-object-fit:cover;
-filter: brightness(50%);
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(50%);
+  z-index: -1;
 }
 
-/****about style******/
-#about{
-  background-color:rgb(103, 99, 99);
-  animation-name: about;
-  animation-duration: 5s;
-  animation-delay: 2s;
- 
+#home .container-fluid {
+  position: relative;
+  z-index: 1; /* Ensures content stays above the video */
+  text-align: center;
+  color: white; /* Adjust text color for better visibility */
 }
-#about p{
-  color:rgb(25, 3, 44);
+#home img {
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+  border:2px solid white; /* Optional: Adds a white border for better visibility */
 }
-
-
-
-
-@keyframes about{
-  0%{
-    transform: translateX(-150%);
-  
-  }
-  100%{
-     transform: translateX(0);
-  }
+/* About style */
+#about {
+  background-color: #2c2c2c;
+  color: white;
+}
+#about p {
+  color: #d9d9d9;
 }
 
-
-
-
-/****education style******/
-#education{
-  background-color:rgb(222, 216, 231);
-
+/* Education style */
+#education {
+  background-color: #1a1a1a;
+  color: #f8b400;
 }
-#education{
-  animation-name: education;
-animation-duration: 5s;
-animation-delay: 4s;
+#education h1 {
+  color: #f8b400;
 }
-
-
-
-@keyframes education{
-  0%{
-    transform: translateX(150%);
-  
-  }
-  100%{
-     transform: translateX(0);
-  }
+#education > div > div > div:hover {
+  transition: all 0.5s;
+  transform: scale(1.1);
 }
 
-
-
-#education h1{
-  color: blueviolet;
-}
-
-#education>div>div>div:hover{
-  transition: all 2s;
-  
-  transform:scale(1.2);
-  }
-/****skills style******/
-#skills h1, #skills h2{
-  color: orange;
+/* Skills style */
+#skills h1, #skills h2 {
+  color: #f8b400;
 }
 input[type="range"] {
-  accent-color: #ed3da1 ;
+  accent-color: #f8b400;
   pointer-events: none;
-   }
-   
-
-#skills .row{
-  animation-name: input;
-  animation-duration: 5s;
-  animation-delay: 6s;
 }
 
-@keyframes input{
-  0%{
-    transform: translateX(-150%);
-  
-  }
-  100%{
-     transform: translateX(0);
-  }
+/* Project style */
+#project {
+  background-color: #2c2c2c;
+  padding: 50px 0;
 }
-/****project style******/
-#project{
-  background-color:rgb(103, 99, 99);
+#project .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-#project>div>div:hover{
-  transition: all 3s;
-  transform: scale(1.3);
-  }
-  #project{
-    animation-name: project;
-    animation-duration: 5s;
-    animation-delay: 8s;
-  }
+#project .row > div {
+  background-color: #444;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+#project .row > div:hover {
+  transform: scale(1.05);
+}
+#project img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
 
-  /****contact style*********/
-  #contact form textarea{
-     resize: none;
-  }
-  
-  @keyframes project{
-    0%{
-      transform: translateX(150%);
-    
-    }
-    100%{
-       transform: translateX(0);
-    }
-  }
-/****responsive to all devices******/
-@media only screen and (min-width:300px){
-  .nav-link.active{
-    display: inline-flex;
-  }
+
+/* Contact style */
+#contact form textarea {
+  resize: none;
 }
-  @media only screen and (max-width:601px){
-    .nav-link.active{
-      position: relative !important;
-      left: 50%;
-    }
-  }
-@media only screen and (min-width:300px) and (max-width:700px){
-  #home video{
-    min-height: 120vh;
-  }
-  #home img{
-    height:200px;
-    width:200px;
-  }
-}
-@media only screen and (min-width:300px) and (max-width:800px){
-  #education img{
-    width:100px; 
-    height:100px;
-  }
-}
-@media only screen and (min-width:300px) and (max-width:800px){
-  #project img{
-    width:100px; 
-    height:100px;
+
+/* Responsive styling */
+@media only screen and (max-width: 800px) {
+  #project img {
+    width: 150px;
+    height: 150px;
   }
 }
